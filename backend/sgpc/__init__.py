@@ -1,0 +1,3 @@
+"""
+SGPC Django project package.
+"""

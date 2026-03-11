@@ -1,0 +1,38 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.so
+.venv/
+venv/
+env/
+ENV/
+.env
+*.log
+db.sqlite3
+staticfiles/
+media/
+
+# Node / React
+node_modules/
+dist/
+.cache/
+*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Misc
+*.bak
+*.tmp
