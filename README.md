@@ -79,12 +79,25 @@ cp .env.example .env
 CREATE DATABASE sgpc_db;
 ```
 
-#### Aplicar migraciones y crear superusuario
+#### Aplicar migraciones y cargar usuarios por defecto
 
 ```bash
 python manage.py migrate
-python manage.py createsuperuser
+python manage.py seed_users
 ```
+
+> Esto crea automáticamente un usuario de prueba por cada rol. También puedes crear tu propio superusuario con `python manage.py createsuperuser`.
+
+#### Usuarios por defecto (solo para desarrollo)
+
+| Email | Contraseña | Rol | Admin Django |
+|---|---|---|---|
+| admin@sgpc.com | `Admin1234!` | ADMINISTRADOR | ✅ |
+| administracion@sgpc.com | `Admin1234!` | ADMINISTRACION | ❌ |
+| produccion@sgpc.com | `Admin1234!` | PRODUCCION | ❌ |
+| chofer@sgpc.com | `Admin1234!` | CHOFER | ❌ |
+
+> ⚠️ **Cambia las contraseñas antes de desplegar en producción.**
 
 #### Iniciar servidor backend
 
