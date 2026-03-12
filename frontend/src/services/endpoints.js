@@ -26,8 +26,18 @@ export const orderService = {
   getHistory: (id) => api.get(`/orders/${id}/history/`),
   getItems: (id) => api.get(`/orders/${id}/items/`),
   addItem: (id, data) => api.post(`/orders/${id}/items/`, data),
+  updateItem: (itemId, data) => api.put(`/orders/items/${itemId}/`, data),
+  deleteItem: (itemId) => api.delete(`/orders/items/${itemId}/`),
   getPayments: (id) => api.get(`/payments/orders/${id}/payments/`),
   addPayment: (id, data) => api.post(`/payments/orders/${id}/payments/`, data),
+}
+
+export const deliveryService = {
+  get: (orderId) => api.get(`/deliveries/orders/${orderId}/delivery/detail/`),
+  create: (orderId, data) => api.post(`/deliveries/orders/${orderId}/delivery/`, data),
+  update: (orderId, data) => api.put(`/deliveries/orders/${orderId}/delivery/detail/`, data),
+  markOut: (id) => api.put(`/deliveries/${id}/mark-out/`),
+  markDelivered: (id) => api.put(`/deliveries/${id}/mark-delivered/`),
 }
 
 export const catalogService = {
